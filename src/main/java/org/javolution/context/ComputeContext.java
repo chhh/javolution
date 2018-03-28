@@ -25,7 +25,9 @@ import org.javolution.osgi.internal.OSGiServices;
  * (to the heap). Device operations are asynchronous and performed in parallel whenever possible
  * (based on inputs parameters dependencies). Synchronisation with host (java) is performed when buffers
  * are read/exported (typically to retrieve the calculations results).
- * 
+ * <pre>
+ *
+ * {@code
  * ```java
  * FloatVector result;
  * ComputeContext ctx = ComputeContext.enter();
@@ -60,7 +62,7 @@ import org.javolution.osgi.internal.OSGiServices;
  *         sum.execute(); // Executes in parallel with others kernels. 
  *         return result; 
  *     }
- *     @Override
+ *     @literal @Override
  *     public void export() { // Moves to global memory. 
  *         buffer.export();
  *     }
@@ -75,7 +77,8 @@ import org.javolution.osgi.internal.OSGiServices;
  *     }  
  * }
  * ```
-
+ * }}
+ * </pre>
  * By default, the best GPU device with support for {@link ComputeContext#DOUBLE_PRECISION_REQUIRED double precision 
  * floating-point} is selected. If your GPU does not have such support, the CPU device is chosen. 
  * For complex data structures shared between OpenCL and Java, {@link org.javolution.io.Struct} is recommended.

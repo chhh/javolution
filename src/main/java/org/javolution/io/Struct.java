@@ -784,8 +784,7 @@ public class Struct {
      * @param  bitOffset the bit start position in the Struct.
      * @param  bitSize the number of bits.
      * @return the specified bits read as a signed long.
-     * @throws IllegalArgumentException if
-     *         {@code(bitOffset + bitSize - 1) / 8 >= this.size()}
+     * @throws IllegalArgumentException if {@code (bitOffset + bitSize - 1) / 8 >= this.size()}
      */
     public long readBits(int bitOffset, int bitSize) {
         if ((bitOffset + bitSize - 1) >> 3 >= this.size()) throw new IllegalArgumentException(
@@ -837,7 +836,7 @@ public class Struct {
      * @param  bitOffset the bit start position in the Struct.
      * @param  bitSize the number of bits.
      * @throws IllegalArgumentException if
-     *         {@code(bitOffset + bitSize - 1) / 8 >= this.size()}
+     *         {@code (bitOffset + bitSize - 1) / 8 >= this.size()}
      */
     public void writeBits(long value, int bitOffset, int bitSize) {
         if ((bitOffset + bitSize - 1) >> 3 >= this.size()) throw new IllegalArgumentException(

@@ -463,7 +463,7 @@ public final class CharArray implements CharSequence, Comparable<CharSequence> {
      * Returns the <code>float</code> represented by this character array.
      *
      * @return the corresponding <code>float</code> value.
-     * @return <code>TypeFormat.parseFloat(this)</code>
+     *         <code>TypeFormat.parseFloat(this)</code>
      * @throws NumberFormatException if this character sequence
      *         does not contain a parsable <code>float</code>.
      */

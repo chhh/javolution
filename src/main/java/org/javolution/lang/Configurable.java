@@ -36,7 +36,7 @@ import org.javolution.text.TextContext;
  * ```java
  * class Document {
  *     public static final Configurable<Font> FONT = new Configurable<Font>() {
- *         {@literal@}Override
+ *         {@literal @}Override
  *         protected Font getDefault() { 
  *             new Font("Arial", Font.BOLD, 18);
  *         }

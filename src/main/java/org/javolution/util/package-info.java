@@ -1,5 +1,5 @@
 /**
- * High-performance collection classes with {@link org.javolution.lang.Realtime worst case execution time behavior}
+ * High-performance collection classes with {@link org.javolution.annotations.Realtime worst case execution time behavior}
  * documented.
  * 
  * Whereas Java current evolution leads to more and more classes being parts of the standard library; Javolution 
@@ -9,23 +9,25 @@
  * 
  * All collections classes support numerous views which can be chained:
  * 
- *  - {@link AbstractCollection#concat concat(Collection)} - View resulting of the concatenation of two collections.
- *  - {@link AbstractCollection#parallel parallel()} - View allowing parallel processing of {@link Parallel} operations.
- *  - {@link AbstractCollection#sequential sequential()} - View disallowing parallel processing of {@link Parallel} operations.
- *  - {@link AbstractCollection#unmodifiable unmodifiable()} - View which does not allow for modifications.
- *  - {@link AbstractCollection#shared shared()} - Thread-safe view based on <a href= "http://en.wikipedia.org/wiki/Readers%E2%80%93writer_lock">
+ *  - {@link org.javolution.util.AbstractCollection#concat concat(Collection)} - View resulting of the concatenation of two collections.
+ *  - {@link org.javolution.util.AbstractCollection#parallel parallel()} - View allowing parallel processing of {@link org.javolution.annotations.Parallel} operations.
+ *  - {@link org.javolution.util.AbstractCollection#sequential sequential()} - View disallowing parallel processing of {@link org.javolution.annotations.Parallel} operations.
+ *  - {@link org.javolution.util.AbstractCollection#unmodifiable unmodifiable()} - View which does not allow for modifications.
+ *  - {@link org.javolution.util.AbstractCollection#shared shared()} - Thread-safe view based on <a href= "http://en.wikipedia.org/wiki/Readers%E2%80%93writer_lock">
  *                      readers-writer locks</a>.
- *  - {@link AbstractCollection#atomic atomic()} - Thread-safe view for which all reads are mutex-free and collection updates 
- *                      (e.g. {@link AbstractCollection#addAll addAll}, {@link AbstractCollection#removeIf removeIf}, ...) are atomic.
- *  - {@link AbstractCollection#filter filter(Predicate)} - View exposing only the elements matching the specified filter and 
+ *  - {@link org.javolution.util.AbstractCollection#atomic atomic()} - Thread-safe view for which all reads are mutex-free and collection updates
+ *                      (e.g. {@link org.javolution.util.AbstractCollection#addAll addAll}, {@link org.javolution.util.AbstractCollection#removeIf removeIf}, ...) are atomic.
+ *  - {@link org.javolution.util.AbstractCollection#filter filter(Predicate)} - View exposing only the elements matching the specified filter and
  *                                         preventing elements not matching the specified filter from being added.
- *  - {@link AbstractCollection#map map(Function)} - View exposing elements through the specified mapping function.
- *  - {@link AbstractCollection#sorted(Comparator) sorted(Comparator)} - View exposing elements sorted according to the specified comparator.
- *  - {@link AbstractCollection#reversed reversed()} - View exposing elements in the reverse iterative order.
- *  - {@link AbstractCollection#distinct distinct()} - View exposing each element only once.
- *  - {@link AbstractCollection#linked linked()} - View exposing each element based on its {@link #add insertion} order.
- *  - {@link AbstractCollection#equality(Equality) equality(Equality)} - View using the specified comparator to test for element equality 
- *                                  (e.g. {@link AbstractCollection#contains}, {@link AbstractCollection#remove}, {@link AbstractCollection#distinct}, ...)
+ *  - {@link org.javolution.util.AbstractCollection#map map(Function)} - View exposing elements through the specified mapping function.
+ *  - {@link org.javolution.util.AbstractCollection#sorted(Comparator) sorted(Comparator)} - View exposing elements sorted according to the specified comparator.
+ *  - {@link org.javolution.util.AbstractCollection#reversed reversed()} - View exposing elements in the reverse iterative order.
+ *  - {@link org.javolution.util.AbstractCollection#distinct distinct()} - View exposing each element only once.
+ *  - {@link org.javolution.util.AbstractCollection#linked linked()} - View exposing each element based on its insertion order.
+ *  - {@link org.javolution.util.AbstractCollection#equality(Equality) equality(Equality)} - View using the specified comparator to test for element equality
+ *                                  (e.g. {@link org.javolution.util.AbstractCollection#contains},
+ *                                  {@link org.javolution.util.AbstractCollection#remove},
+ *                                  {@link org.javolution.util.AbstractCollection#distinct}, ...)
  * 
  * For all these views, the chaining order <b>does matter!</b>
  * 
@@ -44,8 +46,8 @@
  * List<String> threadSafe = names.linked().shared();  
  * List<String> threadUnsafe = names.shared().linked(); 
  * ``` 
-*  It should be noted that {@link AbstractCollection#unmodifiable unmodifiable} views *are not immutable*; 
- * {@link Immutable constant/immutable} collections (or maps) can only be obtained through the freeze method.
+*  It should be noted that {@link org.javolution.util.AbstractCollection#unmodifiable unmodifiable} views *are not immutable*;
+ * {@link org.javolution.lang.Immutable constant/immutable} collections (or maps) can only be obtained through the freeze method.
  * 
  * ```java
  * FastSet.Immutable<String> winners 

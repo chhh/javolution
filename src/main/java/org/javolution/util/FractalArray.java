@@ -74,8 +74,7 @@ public abstract class FractalArray<E> implements Cloneable, Serializable, Iterab
     
     /** 
      * Indicates if this fractal has no element different from {@code null}.
-     * 
-     * @param index the unsigned 32-bits index of the value to return.
+     *
      * @return {@code true} if all elements are {@code null}; {@code false} otherwise.
      */
     @Realtime(limit=CONSTANT)

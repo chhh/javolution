@@ -22,8 +22,9 @@ import java.lang.annotation.Target;
  *     and {@link org.javolution.xml.XMLObjectWriter} classes. It can be locally overridden
  *     in the scope of a {@link org.javolution.xml.XMLContext XMLContext}.</p>
  *     
- * [code]
- * @DefaultXMLFormat(Complex.XML.class) 
+ * <pre>
+ * {@code
+ * @literal @DefaultXMLFormat(Complex.XML.class)
  * public class Complex {
  *     public Complex(double real, double imaginary) { ... }
  *     public double getReal() { ... }
@@ -40,8 +41,9 @@ import java.lang.annotation.Target;
  *              xml.setAttribute("imaginary", c.getImaginary());
  *          }
  *     };      
- * }[/code] 
- * 
+ * }
+ * }
+ * </pre>
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 6.0, July 21, 2013
  */

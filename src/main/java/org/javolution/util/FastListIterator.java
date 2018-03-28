@@ -9,6 +9,7 @@
 package org.javolution.util;
 
 import java.util.ListIterator;
+import java.util.NoSuchElementException;
 
 import org.javolution.util.function.Predicate;
 
@@ -55,7 +56,7 @@ public interface FastListIterator<E> extends FastIterator<E>, ListIterator<E> {
 
     /** 
      * Returns the next element.
-     * @throws NoSuchElementException if the iteration has no next element 
+     * @throws NoSuchElementException if the iteration has no next element
      */
     @Override
     E next();

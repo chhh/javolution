@@ -119,7 +119,7 @@ public abstract class LogContext extends AbstractContext {
     /**
      * Logs the specified debug messages.
      * 
-     * @param message 
+     * @param messages to log
      */
     public static void debug(Object... messages) {
         currentLogContext().log(Level.DEBUG, null, messages);
@@ -128,7 +128,7 @@ public abstract class LogContext extends AbstractContext {
     /**
      * Logs the specified info messages.
      * 
-     * @param message 
+     * @param messages to log
      */
     public static void info(Object... messages) {
         currentLogContext().log(Level.INFO, null, messages);
@@ -137,7 +137,7 @@ public abstract class LogContext extends AbstractContext {
     /**
      * Logs the specified warning messages.
      * 
-     * @param message 
+     * @param messages to log
      */
     public static void warning(Object... messages) {
         currentLogContext().log(Level.WARNING, null, messages);
@@ -146,7 +146,7 @@ public abstract class LogContext extends AbstractContext {
     /**
      * Logs the specified error messages.
      * 
-     * @param message
+     * @param messages to log
      */
     public static void error(Object... messages) {
        currentLogContext().log(Level.ERROR, null, messages);
@@ -154,8 +154,9 @@ public abstract class LogContext extends AbstractContext {
 
     /**
      * Logs the specified error and error messages.
-     * 
-     * @param message
+     *
+     * @param error cause
+     * @param messages to log
      */
     public static void error(Throwable error, Object... messages) {
        currentLogContext().log(Level.ERROR, error, messages);

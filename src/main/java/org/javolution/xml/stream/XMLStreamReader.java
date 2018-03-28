@@ -461,9 +461,9 @@ public interface XMLStreamReader extends XMLStreamConstants {
      * @param length the number of characters to copy
      * @return the number of characters actually copied
      * @throws XMLStreamException if the XML source is not well-formed.
-     * @throws IndexOutOfBoundsException
+     * @throws IndexOutOfBoundsException if
      *             {@code if targetStart < 0 or > than the length of target}
-     * @throws IndexOutOfBoundsException
+     * @throws IndexOutOfBoundsException if
      *             {@code if length < 0 or targetStart + length > length of target}
      * @throws UnsupportedOperationException if this method is not supported.
      */

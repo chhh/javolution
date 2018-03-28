@@ -140,7 +140,7 @@ public final class MathLib {
      * 
      * @param x the first positive integer value.
      * @param y the second positive integer value.
-     * @param y the third positive integer value.
+     * @param z the third positive integer value.
      * @return the corresponding morton code.
      * @see <a href="http://en.wikipedia.org/wiki/Z-order_curve">
      *       Wikipedia: Z-order curve</a>

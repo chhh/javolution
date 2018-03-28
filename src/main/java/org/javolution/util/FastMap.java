@@ -16,7 +16,7 @@ import org.javolution.util.function.Indexer;
 import org.javolution.util.function.Order;
 
 /**
- * High-performance ordered map / multimap based upon fast-access {@link SparseArray}. 
+ * High-performance ordered map / multimap based upon fast-access {@link FastSet} ({@link FractalArray}).
  *     
  * Iterations order over map keys, values or entries is determined by the map {@link #keyOrder key order} except 
  * for specific views such as the {@link #linked linked view} for which iteration is performed according to the 
@@ -59,7 +59,6 @@ import org.javolution.util.function.Order;
  *                          "http://en.wikipedia.org/wiki/Readers%E2%80%93writer_lock">readers-writer locks</a>.</li>
  *    <li>{@link #atomic} - Thread-safe view for which all reads are mutex-free and map updates 
  *                           (e.g. {@link #putAll putAll}) are atomic.</li>
- *    <li>{@link #reversed} - Reversed order view.</li>
  *    <li>{@link #linked} - View exposing each entry based on the {@link #put insertion} order in the view.</li>
  *    <li>{@link #unmodifiable} - View which does not allow for modification.</li>
  *    <li>{@link #valuesEquality} - View using the specified equality comparator for the map's values.</li>

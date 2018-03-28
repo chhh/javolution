@@ -280,7 +280,7 @@ public class XMLReaderImpl implements XMLReader {
      * 
      * @throws SAXException any SAX exception, possibly wrapping another
      *         exception.
-     * @throws IOException an IO exception from the parser, possibly from
+     * @throws XMLStreamException an IO exception from the parser, possibly from
      *         a byte stream or character stream supplied by the application.
      */
     private void parseAll() throws XMLStreamException, SAXException {

@@ -48,7 +48,7 @@ import org.javolution.util.internal.map.ValuesImpl;
  * when comparing keys. This affects the behavior of the containsKey, put, remove, equals, and 
  * hashCode methods (see {@link java.util.IdentityHashMap} for such map in the standard library).
  * The {@link java.util.Map} contract is guaranteed to hold only for maps using {@link Equality#STANDARD} for 
- * {@link #equality() key comparisons}.
+ * equality key comparisons.
  *      
  * @param <K> the type of keys ({@code null} values are not supported)
  * @param <V> the type of values 

@@ -188,8 +188,7 @@ public final class QName implements XMLSerializable, Immutable, CharSequence {
      *
      * @param  index the index of the character starting at <code>0</code>.
      * @return the character at the specified index of this character sequence.
-     * @throws IndexOutOfBoundsException  {@code if ((index < 0) || 
-     *         (index >= length))}
+     * @throws IndexOutOfBoundsException if {@code ((index < 0) || (index >= length))}
      */
     public char charAt(int index) {
         return _toString.charAt(index);

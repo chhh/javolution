@@ -815,11 +815,6 @@ public final class XMLStreamReaderImpl implements XMLStreamReader {
 
     /**
      * Reloads data buffer.
-     * 
-     * @param detectEndOfStream indicates 
-     * @return <code>true</code> if the buffer has been reloaded;
-     *         <code>false</code> if the end of stream has being reached
-     *         and the event type (CHARACTERS or END_DOCUMENT) has been set.
      */
     private void reloadBuffer() throws XMLStreamException {
         if (_reader == null)

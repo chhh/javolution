@@ -16,8 +16,8 @@ package org.javolution.context;
  * {@link org.javolution.xml.DefaultXMLFormat DefaultXMLFormat} annotation.
  * 
  * ```java
- * {@literal@}DefaultTextFormat(Complex.Cartesian.class)
- * {@literal@}DefaultXMLFormat(Complex.XML.class)
+ * {@literal @}DefaultTextFormat(Complex.Cartesian.class)
+ * {@literal @}DefaultXMLFormat(Complex.XML.class)
  * public Complex {
  *     public static final class Cartesian extends org.javolution.text.TextFormat<Complex> { ... }
  *     public static final class Polar extends org.javolution.text.TextFormat<Complex> { ... }
