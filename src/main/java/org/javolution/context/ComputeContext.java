@@ -78,7 +78,7 @@ import org.javolution.osgi.internal.OSGiServices;
 
  * By default, the best GPU device with support for {@link ComputeContext#DOUBLE_PRECISION_REQUIRED double precision 
  * floating-point} is selected. If your GPU does not have such support, the CPU device is chosen. 
- * For complex data structures shared between OpenCL and Java, {@link javolution.io.Struct} is recommended.
+ * For complex data structures shared between OpenCL and Java, {@link org.javolution.io.Struct} is recommended.
  *     
  * *Thread-Safety:* As for any {@link AbstractContext context}, compute contexts are inherently thread-safe 
  * (each thread entering a context has its own context instance); but nesting a {@link ConcurrentContext} within
@@ -205,7 +205,7 @@ public abstract class ComputeContext extends AbstractContext {
     /**
      * Indicates if support for double precision floating-point is required
      * (default {@code true}). Running with the option {@code 
-     * -Djavolution.context.ComputeContext#DOUBLE_PRECISION_REQUIRED=false}
+     * -Dorg.javolution.context.ComputeContext#DOUBLE_PRECISION_REQUIRED=false}
      * disables the requirement to select a device supporting 
      * double precision.
      */

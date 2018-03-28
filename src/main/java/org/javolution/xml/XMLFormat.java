@@ -134,7 +134,7 @@ public abstract class XMLFormat<T> {
      *
      * @param cls the class of the object to return.
      * @param xml the XML input element.
-     * @throws javolution.xml.stream.XMLStreamException Thrown when an error occurs while instantiating the specified class
+     * @throws org.javolution.xml.stream.XMLStreamException Thrown when an error occurs while instantiating the specified class
      * @return the object corresponding to the specified XML element.
      */
     public T newInstance(Class<? extends T> cls, InputElement xml)
@@ -153,7 +153,7 @@ public abstract class XMLFormat<T> {
      *
      * @param obj the object to format.
      * @param xml the <code>XMLElement</code> destination.
-     * @throws javolution.xml.stream.XMLStreamException Thrown when an error occurs while writing
+     * @throws org.javolution.xml.stream.XMLStreamException Thrown when an error occurs while writing
      */
     public abstract void write(T obj, OutputElement xml)
             throws XMLStreamException;
@@ -164,7 +164,7 @@ public abstract class XMLFormat<T> {
      * @param xml the XML element to parse.
      * @param obj the object created through {@link #newInstance}
      *        and to setup from the specified XML element.
-     * @throws javolution.xml.stream.XMLStreamException Thrown when an error occurs while reading
+     * @throws org.javolution.xml.stream.XMLStreamException Thrown when an error occurs while reading
      */
     public abstract void read(InputElement xml, T obj)
             throws XMLStreamException;
@@ -216,7 +216,7 @@ public abstract class XMLFormat<T> {
          * Indicates if more nested XML element can be read. This method 
          * positions the {@link #getStreamReader reader} at the start of the
          * next XML element to be read (if any).
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          * @return <code>true</code> if there is more XML element to be read; 
          *         <code>false</code> otherwise.
          */
@@ -265,7 +265,7 @@ public abstract class XMLFormat<T> {
          * @param <T> type of object
          * @param name the local name of the next element.
          * @return the next nested object or <code>null</code>.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          */
         public <T> T get(String name) throws XMLStreamException {
             if (!hasNext()// Asserts isReaderAtNext == true
@@ -289,7 +289,7 @@ public abstract class XMLFormat<T> {
          * @param localName the local name.
          * @param uri the namespace URI or <code>null</code>.
          * @return the next nested object or <code>null</code>.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          */
         public <T> T get(String localName, String uri)
                 throws XMLStreamException {
@@ -318,7 +318,7 @@ public abstract class XMLFormat<T> {
          * @param name the local name of the element to match.
          * @param cls the class identifying the format of the object to return.
          * @return the next nested object or <code>null</code>.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          */
         public <T> T get(String name, Class<T> cls) throws XMLStreamException {
             if (!hasNext()// Asserts isReaderAtNext == true
@@ -341,7 +341,7 @@ public abstract class XMLFormat<T> {
          * @param uri the namespace URI or <code>null</code>.
          * @param cls the class identifying the format of the object to return.
          * @return the next nested object or <code>null</code>.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          */
         public <T> T get(String localName, String uri, Class<T> cls)
                 throws XMLStreamException {
@@ -400,10 +400,10 @@ public abstract class XMLFormat<T> {
 
         /**
          * Returns the content of a text-only element (equivalent to 
-         * {@link javolution.xml.stream.XMLStreamReader#getElementText 
+         * {@link org.javolution.xml.stream.XMLStreamReader#getElementText
          * getStreamReader().getElementText()}).
          *
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          * @return the element text content or an empty sequence if none.
          */
         public CharArray getText() throws XMLStreamException {
@@ -415,7 +415,7 @@ public abstract class XMLFormat<T> {
         /**
          * Returns the attributes for this XML input element.
          *
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          * @return the attributes mapping.
          */
         public Attributes getAttributes() throws XMLStreamException {
@@ -429,7 +429,7 @@ public abstract class XMLFormat<T> {
          * Searches for the attribute having the specified name.
          *
          * @param  name the name of the attribute.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          * @return the value for the specified attribute or <code>null</code>
          *         if the attribute is not found.
          */
@@ -445,7 +445,7 @@ public abstract class XMLFormat<T> {
          *
          * @param  name the name of the attribute.
          * @param  defaultValue a default value.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          * @return the value for the specified attribute or
          *         the <code>defaultValue</code> if the attribute is not found.
          */
@@ -460,7 +460,7 @@ public abstract class XMLFormat<T> {
          *
          * @param  name the name of the attribute searched for.
          * @param  defaultValue the value returned if the attribute is not found.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          * @return the <code>boolean</code> value for the specified attribute or
          *         the default value if the attribute is not found.
          */
@@ -475,7 +475,7 @@ public abstract class XMLFormat<T> {
          *
          * @param  name the name of the attribute searched for.
          * @param  defaultValue the value returned if the attribute is not found.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          * @return the <code>char</code> value for the specified attribute or
          *         the default value if the attribute is not found.
          */
@@ -496,7 +496,7 @@ public abstract class XMLFormat<T> {
          *
          * @param  name the name of the attribute searched for.
          * @param  defaultValue the value returned if the attribute is not found.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          * @return the <code>byte</code> value for the specified attribute or
          *         the default value if the attribute is not found.
          */
@@ -512,7 +512,7 @@ public abstract class XMLFormat<T> {
          *
          * @param  name the name of the attribute searched for.
          * @param  defaultValue the value returned if the attribute is not found.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          * @return the <code>short</code> value for the specified attribute or
          *         the default value if the attribute is not found.
          */
@@ -528,7 +528,7 @@ public abstract class XMLFormat<T> {
          *
          * @param  name the name of the attribute searched for.
          * @param  defaultValue the value returned if the attribute is not found.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          * @return the <code>int</code> value for the specified attribute or
          *         the default value if the attribute is not found.
          */
@@ -544,7 +544,7 @@ public abstract class XMLFormat<T> {
          *
          * @param  name the name of the attribute searched for.
          * @param  defaultValue the value returned if the attribute is not found.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          * @return the <code>long</code> value for the specified attribute or
          *         the default value if the attribute is not found.
          */
@@ -559,7 +559,7 @@ public abstract class XMLFormat<T> {
          *
          * @param  name the name of the attribute searched for.
          * @param  defaultValue the value returned if the attribute is not found.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          * @return the <code>float</code> value for the specified attribute or
          *         the default value if the attribute is not found.
          */
@@ -574,7 +574,7 @@ public abstract class XMLFormat<T> {
          *
          * @param  name the name of the attribute searched for.
          * @param  defaultValue the value returned if the attribute is not found.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          * @return the <code>double</code> value for the specified attribute or
          *         the default value if the attribute is not found.
          */
@@ -591,7 +591,7 @@ public abstract class XMLFormat<T> {
          * @param <T> type of the attribute
          * @param  name the name of the attribute.
          * @param  defaultValue the value returned if the attribute is not found.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs reading the xml stream
          * @return the parse value for the specified attribute or
          *         the default value if the attribute is not found.
          */
@@ -671,7 +671,7 @@ public abstract class XMLFormat<T> {
          * nested element of unknown type. 
          *
          * @param obj the object added as nested element or <code>null</code>.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public void add(Object obj) throws XMLStreamException {
             if (obj == null) {
@@ -701,7 +701,7 @@ public abstract class XMLFormat<T> {
          *
          * @param obj the object added as nested element or <code>null</code>.
          * @param name the name of the nested element.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public void add(Object obj, String name) throws XMLStreamException {
             if (obj == null)
@@ -733,7 +733,7 @@ public abstract class XMLFormat<T> {
          * @param obj the object added as nested element or <code>null</code>.
          * @param localName the local name of the nested element.
          * @param uri the namespace URI of the nested element.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public void add(Object obj, String localName, String uri)
                 throws XMLStreamException {
@@ -766,7 +766,7 @@ public abstract class XMLFormat<T> {
          * @param obj the object added as nested element or <code>null</code>.
          * @param name the name of the nested element.
          * @param cls the class identifying the format of the specified object.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public <T> void add(T obj, String name, Class<T> cls)
                 throws XMLStreamException {
@@ -795,7 +795,7 @@ public abstract class XMLFormat<T> {
          * @param localName the local name of the nested element.
          * @param uri the namespace URI of the nested element.
          * @param cls the class identifying the format of the specified object.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public <T> void add(T obj, String localName, String uri, Class<T> cls)
                 throws XMLStreamException {
@@ -825,11 +825,11 @@ public abstract class XMLFormat<T> {
 
         /**
          * Adds the content of a text-only element (equivalent to {@link 
-         * javolution.xml.stream.XMLStreamWriter#writeCharacters(CharSequence) 
+         * org.javolution.xml.stream.XMLStreamWriter#writeCharacters(CharSequence)
          * getStreamWriter().writeCharacters(text)}).
          *
          * @param text the element text content or an empty sequence if none.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public void addText(CharSequence text) throws XMLStreamException {
             _writer.writeCharacters(text);
@@ -840,7 +840,7 @@ public abstract class XMLFormat<T> {
          * (for J2ME compatibility).
          *
          * @param text the element text content or an empty sequence if none.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public void addText(String text) throws XMLStreamException {
             _writer.writeCharacters(text);
@@ -852,7 +852,7 @@ public abstract class XMLFormat<T> {
          *
          * @param  name the attribute name.
          * @param  value the attribute value or <code>null</code>.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public void setAttribute(String name, CharSequence value)
                 throws XMLStreamException {
@@ -867,7 +867,7 @@ public abstract class XMLFormat<T> {
          *
          * @param  name the attribute name.
          * @param  value the attribute value.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public void setAttribute(String name, String value)
                 throws XMLStreamException {
@@ -881,7 +881,7 @@ public abstract class XMLFormat<T> {
          * 
          * @param  name the attribute name.
          * @param  value the <code>boolean</code> value for the specified attribute.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public void setAttribute(String name, boolean value)
                 throws XMLStreamException {
@@ -895,7 +895,7 @@ public abstract class XMLFormat<T> {
          * 
          * @param  name the attribute name.
          * @param  value the <code>char</code> value for the specified attribute.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public void setAttribute(String name, char value)
                 throws XMLStreamException {
@@ -908,7 +908,7 @@ public abstract class XMLFormat<T> {
          * 
          * @param  name the attribute name.
          * @param  value the <code>byte</code> value for the specified attribute.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public void setAttribute(String name, byte value)
                 throws XMLStreamException {
@@ -920,7 +920,7 @@ public abstract class XMLFormat<T> {
          * 
          * @param  name the attribute name.
          * @param  value the <code>short</code> value for the specified attribute.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public void setAttribute(String name, short value)
                 throws XMLStreamException {
@@ -932,7 +932,7 @@ public abstract class XMLFormat<T> {
          * 
          * @param  name the attribute name.
          * @param  value the <code>int</code> value for the specified attribute.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public void setAttribute(String name, int value)
                 throws XMLStreamException {
@@ -944,7 +944,7 @@ public abstract class XMLFormat<T> {
          * 
          * @param  name the attribute name.
          * @param  value the <code>long</code> value for the specified attribute.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public void setAttribute(String name, long value)
                 throws XMLStreamException {
@@ -956,7 +956,7 @@ public abstract class XMLFormat<T> {
          * 
          * @param  name the attribute name.
          * @param  value the <code>float</code> value for the specified attribute.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public void setAttribute(String name, float value)
                 throws XMLStreamException {
@@ -968,7 +968,7 @@ public abstract class XMLFormat<T> {
          * 
          * @param  name the attribute name.
          * @param  value the <code>double</code> value for the specified attribute.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public void setAttribute(String name, double value)
                 throws XMLStreamException {
@@ -977,12 +977,12 @@ public abstract class XMLFormat<T> {
 
         /**
          * Sets the specified attribute using its associated 
-         * {@link javolution.text.TextFormat TextFormat}.
+         * {@link org.javolution.text.TextFormat TextFormat}.
          * 
          * @param  name the name of the attribute.
          * @param  value the value for the specified attribute
          *         or <code>null</code> in which case the attribute is not set.
-         * @throws javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
+         * @throws org.javolution.xml.stream.XMLStreamException if and error occurs writing the xml stream
          */
         public void setAttribute(String name, Object value)
                 throws XMLStreamException {

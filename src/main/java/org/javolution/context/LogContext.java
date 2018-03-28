@@ -89,7 +89,7 @@ public abstract class LogContext extends AbstractContext {
 
     /**
      * Holds the default logging level (<code>INFO</code>). This level is configurable. For example, running with 
-     * the option `-Djavolution.context.LogContext#DEFAULT_LEVEL=WARNING` causes the debug/info not to be logged. 
+     * the option `-Dorg.javolution.context.LogContext#DEFAULT_LEVEL=WARNING` causes the debug/info not to be logged.
      */
     public static final Configurable<Level> DEFAULT_LEVEL = new Configurable<Level>() {
         @Override

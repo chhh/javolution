@@ -200,9 +200,9 @@ public final class XMLStreamWriterImpl implements XMLStreamWriter {
      * Sets the writer output destination for this XML stream writer. 
      *
      * @param  writer the output destination writer.
-     * @see    javolution.io.UTF8StreamWriter
-     * @see    javolution.io.UTF8ByteBufferWriter
-     * @see    javolution.io.AppendableWriter
+     * @see    org.javolution.io.UTF8StreamWriter
+     * @see    org.javolution.io.UTF8ByteBufferWriter
+     * @see    org.javolution.io.AppendableWriter
      */
     public void setOutput(Writer writer) throws XMLStreamException {
         if (_writer != null)

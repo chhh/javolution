@@ -18,9 +18,9 @@ import java.lang.annotation.Target;
 
 /**
  * <p> Specifies the default xml format of a class (for xml serialization/deserialization). 
- *     The default format is used by the {@link javolution.xml.XMLObjectReader}
- *     and {@link javolution.xml.XMLObjectWriter} classes. It can be locally overridden 
- *     in the scope of a {@link javolution.xml.XMLContext XMLContext}.</p>
+ *     The default format is used by the {@link org.javolution.xml.XMLObjectReader}
+ *     and {@link org.javolution.xml.XMLObjectWriter} classes. It can be locally overridden
+ *     in the scope of a {@link org.javolution.xml.XMLContext XMLContext}.</p>
  *     
  * [code]
  * @DefaultXMLFormat(Complex.XML.class) 

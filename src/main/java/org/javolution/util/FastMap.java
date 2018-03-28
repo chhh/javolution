@@ -26,7 +26,7 @@ import org.javolution.util.function.Order;
  * space or performance.
  *  
  * ```java
- * import static javolution.util.function.Order.*;
+ * import static org.javolution.util.function.Order.*;
  * 
  * // Instances
  * FastMap<Foo, Bar> hashMap = new FastMap<Foo, Bar>(); // Arbitrary order (hash-based).

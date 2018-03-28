@@ -1,5 +1,5 @@
 /**
-<p> Run-time {@link javolution.context.AbstractContext contexts} to facilitate 
+<p> Run-time {@link org.javolution.context.AbstractContext contexts} to facilitate
     separation of concerns and achieve higher level of performance and flexibility.</p>
 
 ## Separation of Concerns
@@ -26,7 +26,7 @@ Separation of concerns can be addressed through "Aspect Programming",
 but there is a rather simpler solution <b>"Context Programming"</b>!</p>
        
 It does not require any particular tool, it basically says that every threads 
-has a {@link javolution.context.AbstractContext context} which can be customized by someone else
+has a {@link org.javolution.context.AbstractContext context} which can be customized by someone else
 (the one who knows what to do, when running OSGi it is typically a separate bundle).
 Then, your code looks a lot cleaner and is way more flexible as you don't have
 to worry about logging, security, performance etc. in your low level methods. 
@@ -39,37 +39,37 @@ void myMethod() {
 }
 ```       
 
-Used properly <i><b>J</b>avolution</i>'s {@link javolution.context.AbstractContext contexts}
+Used properly <i><b>J</b>avolution</i>'s {@link org.javolution.context.AbstractContext contexts}
 greatly facilitate the separation of concerns. Contexts are fully 
 integrated with OSGi (they are published services). Applications 
 may dynamically plug-in the "right context" using OSGi mechanisms. 
-For example, the {@link javolution.context.SecurityContext SecurityContext} might only be known at runtime.
+For example, the {@link org.javolution.context.SecurityContext SecurityContext} might only be known at runtime.
      
 ## Predefined Contexts
 
 `Javolution` provides several useful runtime contexts:
 
-- {@link javolution.context.ComputeContext ComputeContext} - To take advantage of computing devices (GPUs)
+- {@link org.javolution.context.ComputeContext ComputeContext} - To take advantage of computing devices (GPUs)
   and to reduce heap allocations.
-- {@link javolution.context.ConcurrentContext ConcurrentContext} - To take advantage of concurrent algorithms
+- {@link org.javolution.context.ConcurrentContext ConcurrentContext} - To take advantage of concurrent algorithms
   on multi-cores systems.
-- {@link javolution.context.LogContext LogContext} - To log events according to the runtime environment 
+- {@link org.javolution.context.LogContext LogContext} - To log events according to the runtime environment
   (e.g. {@link org.osgi.service.log.LogService} when running OSGi).     
-- {@link javolution.context.LocalContext LocalContext} - To define locally  scoped environment settings.
-- {@link javolution.context.ComputeContext ComputeContext} - To accelerate computations using GPUs device (if present).
-- {@link javolution.context.SecurityContext SecurityContext} - To address application-level security concerns.
-- {@link javolution.context.StorageContext StorageContext} - To store/retrieve your persistent data/dataset.
-- {@link javolution.context.FormatContext FormatContext} - For plugable objects parsing/formatting.
-   Such as  {@link javolution.text.TextContext TextContext} for plain text, 
-   or {@link javolution.xml.XMLContext XMLContext} for XML serialization/deserialization.
-- {@link javolution.context.StorageContext StorageContext} - To store/retrieve your persistent data/dataset.
+- {@link org.javolution.context.LocalContext LocalContext} - To define locally  scoped environment settings.
+- {@link org.javolution.context.ComputeContext ComputeContext} - To accelerate computations using GPUs device (if present).
+- {@link org.javolution.context.SecurityContext SecurityContext} - To address application-level security concerns.
+- {@link org.javolution.context.StorageContext StorageContext} - To store/retrieve your persistent data/dataset.
+- {@link org.javolution.context.FormatContext FormatContext} - For plugable objects parsing/formatting.
+   Such as  {@link org.javolution.text.TextContext TextContext} for plain text,
+   or {@link org.javolution.xml.XMLContext XMLContext} for XML serialization/deserialization.
+- {@link org.javolution.context.StorageContext StorageContext} - To store/retrieve your persistent data/dataset.
 - ...add your own !
 
   
 
 ## FAQ
 
-1. Thanks for providing GPUs accelerated {@link javolution.context.ComputeContext ComputeContext} but why 
+1. Thanks for providing GPUs accelerated {@link org.javolution.context.ComputeContext ComputeContext} but why
    is it recommended to enter/exit a context scope in order to use it ?
 > ComputeContext allocates buffers in the device memory (CPU/GPU), these buffers are released either through 
 > garbage collection or immediately when exiting the context scope. Freeing the resources immediately ensures
@@ -93,7 +93,7 @@ public static void main(String... args) {
 2. In my application I create new threads on-the-fly and I would like them to inherit the current context environment. 
    How can I do that?
 > Context is automatically inherited when performing concurrent executions using 
-> {@link javolution.context.ConcurrentContext ConcurrentContext}. If you create new threads yourself 
+> {@link org.javolution.context.ConcurrentContext ConcurrentContext}. If you create new threads yourself
 > you can easily setup their context as shown below.
 
 ```java

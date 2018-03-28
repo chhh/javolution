@@ -31,7 +31,7 @@ import org.javolution.util.internal.set.SortedSetImpl;
  * space or performance. 
  *     
  * ```java
- * import static javolution.util.function.Order.*;
+ * import static org.javolution.util.function.Order.*;
  * 
  * // Instances. 
  * FastSet<Foo> hashSet = new FastSet<Foo>(); // Arbitrary order (hash indexing) 

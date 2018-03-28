@@ -35,7 +35,7 @@ import org.javolution.text.TypeFormat;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 6.1, February 25, 2014
- * @see javolution.util.function.Indexer
+ * @see org.javolution.util.function.Indexer
  */
 @Realtime
 @DefaultTextFormat(Index.Format.class)
@@ -62,7 +62,7 @@ public final class Index extends Number implements Comparable<Index>, Immutable 
     /**
      * Holds the number of unique preallocated instances (default {@code 1024}). 
      * This number is configurable, for example with
-     * {@code -Djavolution.util.Index#UNIQUE=0} there is no unique instance.
+     * {@code -Dorg.javolution.util.Index#UNIQUE=0} there is no unique instance.
      */
     public static final Configurable<Integer> UNIQUE = new Configurable<Integer>() {
 

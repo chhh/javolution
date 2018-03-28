@@ -164,14 +164,14 @@ public final class XMLContextImpl extends XMLContext {
     /**
      * The default XML representation for {@link java.util.Map} consists of 
      * key/value pair as nested XML elements. For example:[code]
-     * <javolution.util.FastMap>
+     * <org.javolution.util.FastMap>
      *     <Key class="java.lang.String" value="ONE"/>
      *     <Value class="java.lang.Integer" value="1"/>
      *     <Key class="java.lang.String" value="TWO"/>
      *     <Value class="java.lang.Integer" value="2"/>
      *     <Key class="java.lang.String" value="THREE"/>
      *     <Value class="java.lang.Integer" value="3"/>
-     * </javolution.util.FastMap>[/code]
+     * </org.javolution.util.FastMap>[/code]
      *
      * The elements' order is defined by the map's entries iterator order.
      * Maps are deserialized using their default constructor.

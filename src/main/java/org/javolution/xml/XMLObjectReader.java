@@ -59,7 +59,7 @@ public class XMLObjectReader {
      * 
      * @param in the input stream.
      * @return Instance of an XMLObjectReader for this InputStream
-     * @throws javolution.xml.stream.XMLStreamException if an error occurs setting the input stream
+     * @throws org.javolution.xml.stream.XMLStreamException if an error occurs setting the input stream
      */
     public static XMLObjectReader newInstance(InputStream in)
             throws XMLStreamException {
@@ -75,7 +75,7 @@ public class XMLObjectReader {
      * @param in the input stream.
      * @param encoding the input stream encoding
      * @return Instance of an XMLObjectReader for this InputStream with the given encoding
-     * @throws javolution.xml.stream.XMLStreamException if an error occurs setting the input stream
+     * @throws org.javolution.xml.stream.XMLStreamException if an error occurs setting the input stream
      */
     public static XMLObjectReader newInstance(InputStream in, String encoding)
             throws XMLStreamException {
@@ -90,7 +90,7 @@ public class XMLObjectReader {
      * 
      * @param in the reader source.
      * @return Instance of an XMLObjectReader for this Reader
-     * @throws javolution.xml.stream.XMLStreamException if an error occurs setting the input stream
+     * @throws org.javolution.xml.stream.XMLStreamException if an error occurs setting the input stream
      */
     public static XMLObjectReader newInstance(Reader in)
             throws XMLStreamException {
@@ -120,7 +120,7 @@ public class XMLObjectReader {
      * 
      * @param  in the source input stream.
      * @return <code>this</code>
-     * @throws javolution.xml.stream.XMLStreamException if an error occurs setting the input stream
+     * @throws org.javolution.xml.stream.XMLStreamException if an error occurs setting the input stream
      * @see    XMLStreamReaderImpl#setInput(InputStream)
      */
     public XMLObjectReader setInput(InputStream in) throws XMLStreamException {
@@ -137,7 +137,7 @@ public class XMLObjectReader {
      * @param in the input source.
      * @param encoding the associated encoding.
      * @return <code>this</code>
-     * @throws javolution.xml.stream.XMLStreamException if an error occurs setting the input stream
+     * @throws org.javolution.xml.stream.XMLStreamException if an error occurs setting the input stream
      * @see    XMLStreamReaderImpl#setInput(InputStream, String)
      */
     public XMLObjectReader setInput(InputStream in, String encoding)
@@ -154,7 +154,7 @@ public class XMLObjectReader {
      * 
      * @param  in the source reader.
      * @return <code>this</code>
-     * @throws javolution.xml.stream.XMLStreamException if an error occurs setting the input stream
+     * @throws org.javolution.xml.stream.XMLStreamException if an error occurs setting the input stream
      * @see    XMLStreamReaderImpl#setInput(Reader)
      */
     public XMLObjectReader setInput(Reader in) throws XMLStreamException {
@@ -196,7 +196,7 @@ public class XMLObjectReader {
      *
      * @return <code>true</code> if more element/data to be read; 
      *         <code>false</code> otherwise.
-     * @throws javolution.xml.stream.XMLStreamException if an error occurs reading the input
+     * @throws org.javolution.xml.stream.XMLStreamException if an error occurs reading the input
      * @see    XMLFormat.InputElement#hasNext()
      */
     public boolean hasNext() throws XMLStreamException {
@@ -224,7 +224,7 @@ public class XMLObjectReader {
      * @param name the local name of the next element.
      * @return the next content object or <code>null</code> if the 
      *         local name does not match.
-     * @throws javolution.xml.stream.XMLStreamException if an error occurs while reading the input stream
+     * @throws org.javolution.xml.stream.XMLStreamException if an error occurs while reading the input stream
      * @see    XMLFormat.InputElement#get(String)
      */
     @SuppressWarnings("unchecked")
@@ -241,7 +241,7 @@ public class XMLObjectReader {
      * @param uri the namespace URI.
      * @return the next content object or <code>null</code> if the 
      *         name/uri does not match.
-     * @throws javolution.xml.stream.XMLStreamException if an error occurs while reading the input stream
+     * @throws org.javolution.xml.stream.XMLStreamException if an error occurs while reading the input stream
      * @see    XMLFormat.InputElement#get(String, String)
      */
     @SuppressWarnings("unchecked")
@@ -258,7 +258,7 @@ public class XMLObjectReader {
      * @param name the name of the element to match.
      * @param cls the non-abstract class identifying the object to return.
      * @return <code>read(name, null, cls)</code>
-     * @throws javolution.xml.stream.XMLStreamException if an error occurs while reading the input stream
+     * @throws org.javolution.xml.stream.XMLStreamException if an error occurs while reading the input stream
      */
     public <T> T read(String name, Class<T> cls) throws XMLStreamException {
         return _xml.get(name, cls);
@@ -274,7 +274,7 @@ public class XMLObjectReader {
      * @param uri the namespace URI.
      * @param cls the non-abstract class identifying the object to return.
      * @return the next content object or <code>null</code> if no match.
-     * @throws javolution.xml.stream.XMLStreamException if an error occurs while reading the input stream
+     * @throws org.javolution.xml.stream.XMLStreamException if an error occurs while reading the input stream
      */
     public <T> T read(String localName, String uri, Class<T> cls)
             throws XMLStreamException {
@@ -284,7 +284,7 @@ public class XMLObjectReader {
     /**
      * Closes this reader and its underlying input then {@link #reset reset}
      * this reader for potential reuse.
-     * @throws javolution.xml.stream.XMLStreamException if an error occurs closing the input stream
+     * @throws org.javolution.xml.stream.XMLStreamException if an error occurs closing the input stream
      */
     public void close() throws XMLStreamException {
         try {

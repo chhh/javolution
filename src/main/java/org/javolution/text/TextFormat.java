@@ -28,8 +28,8 @@ import java.io.IOException;
  *     public String toString() {
  *         return TextContext.getFormat(Complex.class).format(this);
  *     }
- *     public static class Cartesian extends javolution.text.TextFormat<Complex> { ... }
- *     public static class Polar extends javolution.text.TextFormat<Complex> { ... }
+ *     public static class Cartesian extends org.javolution.text.TextFormat<Complex> { ... }
+ *     public static class Polar extends org.javolution.text.TextFormat<Complex> { ... }
  * }}</p>
  * 
  * <p> Text formats can be locally overridden.

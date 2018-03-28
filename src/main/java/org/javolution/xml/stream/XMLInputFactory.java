@@ -18,7 +18,7 @@ import java.io.Reader;
  *     individually configured (if not enough the factory can be 
  *     {@link #clone cloned}). 
  * {@code
- * import javolution.xml.stream.*;
+ * import org.javolution.xml.stream.*;
  * public class Activator implements BundleActivator { 
  *     public void start(BundleContext bc) throws Exception {
  *     
@@ -55,12 +55,12 @@ public interface XMLInputFactory extends Cloneable {
      * The property that requires the parser to coalesce adjacent character data
      * sections.
      */
-    public static final String IS_COALESCING = "javolution.xml.stream.isCoalescing";
+    public static final String IS_COALESCING = "org.javolution.xml.stream.isCoalescing";
 
     /**
      * The property that requires the parser to validate the input data.
      */
-    public static final String IS_VALIDATING = "javolution.xml.stream.isValidating";
+    public static final String IS_VALIDATING = "org.javolution.xml.stream.isValidating";
 
     /**
      * Property used to specify additional entities to be recognized by the 
@@ -75,7 +75,7 @@ public interface XMLInputFactory extends Cloneable {
      *     factory.setProperty(ENTITIES, HTML_ENTITIES);
      * [/code]
      */
-    public static final String ENTITIES = "javolution.xml.stream.entities";
+    public static final String ENTITIES = "org.javolution.xml.stream.entities";
 
     /**
      * Returns a XML stream reader for the specified I/O reader.

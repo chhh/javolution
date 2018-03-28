@@ -17,7 +17,7 @@ import java.io.Writer;
  *     individually configured  (if not enough the factory can be 
  *     {@link #clone cloned}).
  * {@code
- * import javolution.xml.stream.*;
+ * import org.javolution.xml.stream.*;
  * public class Activator implements BundleActivator { 
  *     public void start(BundleContext bc) throws Exception {
  *     
@@ -57,7 +57,7 @@ public interface XMLOutputFactory extends Cloneable {
      * Property used to set prefix defaulting on the output side
      * (type: <code>Boolean</code>, default: <code>FALSE</code>).
      */
-    public static final String IS_REPAIRING_NAMESPACES = "javolution.xml.stream.isRepairingNamespaces";
+    public static final String IS_REPAIRING_NAMESPACES = "org.javolution.xml.stream.isRepairingNamespaces";
 
     /**
      * Property used to specify the prefix to be appended by a trailing
@@ -65,20 +65,20 @@ public interface XMLOutputFactory extends Cloneable {
      * a temporary non-colliding prefix when repairing namespaces
      * (type: <code>String</code>, default: <code>"ns"</code>).
      */
-    public final static String REPAIRING_PREFIX = "javolution.xml.stream.repairingPrefix";
+    public final static String REPAIRING_PREFIX = "org.javolution.xml.stream.repairingPrefix";
 
     /**
      * Property used to specify an indentation string; non-null indentation 
      * forces the writer to write elements into separate lines
      * (type: <code>String</code>, default: <code>null</code>).
      */
-    public static final String INDENTATION = "javolution.xml.stream.indentation";
+    public static final String INDENTATION = "org.javolution.xml.stream.indentation";
 
     /**
     * Property used to specify the new line characters
     * (type: <code>String</code>, default: <code>"\n"</code>).
     */
-    public static final String LINE_SEPARATOR = "javolution.xml.stream.lineSeparator";
+    public static final String LINE_SEPARATOR = "org.javolution.xml.stream.lineSeparator";
 
     /**
      * Property indicating if the stream writers are allowed to automatically 
@@ -86,7 +86,7 @@ public interface XMLOutputFactory extends Cloneable {
      * matching end element
      * (type: <code>Boolean</code>, default: <code>FALSE</code>).
      */
-    public final static String AUTOMATIC_EMPTY_ELEMENTS = "javolution.xml.stream.automaticEmptyElements";
+    public final static String AUTOMATIC_EMPTY_ELEMENTS = "org.javolution.xml.stream.automaticEmptyElements";
 
     /**
      * Property indicating if the stream writers are not allowed to use 
@@ -96,7 +96,7 @@ public interface XMLOutputFactory extends Cloneable {
      * (e.g. i.e. "&lt;empty /&gt;" replaced by  "&lt;empty&gt;&lt;/empty&gt;"),
      * This property takes precedence over {@link #AUTOMATIC_EMPTY_ELEMENTS}.
      */
-    public final static String NO_EMPTY_ELEMENT_TAG = "javolution.xml.stream.noEmptyElementTag";
+    public final static String NO_EMPTY_ELEMENT_TAG = "org.javolution.xml.stream.noEmptyElementTag";
 
     /**
      * Returns a XML stream writer to the specified i/o writer.

@@ -15,14 +15,14 @@ import org.javolution.text.TextFormat;
 
 /**
  * <p> A context for XML parsing/formatting. This context provides 
- *     the {@link javolution.xml.XMLFormat XMLFormat} to parse/format objects
+ *     the {@link org.javolution.xml.XMLFormat XMLFormat} to parse/format objects
  *     of any class. If not superseded, the XML format for a class is specified
- *     by the {@link javolution.xml.DefaultXMLFormat DefaultXMLFormat} 
+ *     by the {@link org.javolution.xml.DefaultXMLFormat DefaultXMLFormat}
  *     annotation.</p>
  * <p> A XML context always returns the most specialized format. If a class 
  *     has no default format annotation (inherited or not), then the default 
  *     {@link java.lang.Object} format (with "value" attribute is 
- *     parsed/formatted using {@link javolution.text.TextContext current 
+ *     parsed/formatted using {@link org.javolution.text.TextContext current
  *     text format}) is returned. </p>
  *     <p>A predefined format exists for the following standard types:</p>
  *     <ul>

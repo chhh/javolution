@@ -136,7 +136,7 @@ public abstract class Configurable<T> {
      * the {@link #parse parsed} value of the property supersedes the 
      * {@link #getDefault() default} value of this configurable. 
      * For example, running the JVM with
-     * the option {@code -Djavolution.context.ConcurrentContext#CONCURRENCY=0} 
+     * the option {@code -Dorg.javolution.context.ConcurrentContext#CONCURRENCY=0}
      * disables concurrency support.
      */
     public Configurable() {
@@ -174,7 +174,7 @@ public abstract class Configurable<T> {
     /**
      * Returns this configurable name. By convention, the name of the 
      * configurable is the name of the static field holding the
-     * configurable (e.g. "javolution.context.ConcurrentContext#CONCURRENCY").
+     * configurable (e.g. "org.javolution.context.ConcurrentContext#CONCURRENCY").
      * This method should be overridden if the enclosing class needs to be 
      * impervious to obfuscation or if the enclosing class defines multiple 
      * configurable fields.

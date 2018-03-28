@@ -8,8 +8,8 @@
     existing StAX code requires very little modification to be used with these 
     new classes.</p>
 <p> For more information about the usage of this package please read the 
-    documentation for the {@link javolution.xml.stream.XMLStreamReader} and 
-    {@link javolution.xml.stream.XMLStreamWriter} interfaces.</p>
+    documentation for the {@link org.javolution.xml.stream.XMLStreamReader} and
+    {@link org.javolution.xml.stream.XMLStreamWriter} interfaces.</p>
 <p> For more information about StAX (Streaming API for XML) in general see 
     <a href="http://en.wikipedia.org/wiki/StAX">Wikipedia: StAX</a></p>
  */

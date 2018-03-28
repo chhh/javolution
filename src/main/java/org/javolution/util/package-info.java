@@ -1,5 +1,5 @@
 /**
- * High-performance collection classes with {@link javolution.lang.Realtime worst case execution time behavior} 
+ * High-performance collection classes with {@link org.javolution.lang.Realtime worst case execution time behavior}
  * documented.
  * 
  * Whereas Java current evolution leads to more and more classes being parts of the standard library; Javolution 

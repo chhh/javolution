@@ -96,7 +96,7 @@ public class DefaultHandler implements ContentHandler, ErrorHandler {
      *     correctly overriden.  This method generates a compile-error
      *     <code>"final method cannot be overridden"</code> if
      *     <code>org.xml.sax.Attributes</code> is used instead of
-     *     <code>javolution.xml.sax.Attributes</code> (common mistake).</p>
+     *     <code>org.javolution.xml.sax.Attributes</code> (common mistake).</p>
      * @param  uri the namespace URI, or an empty character sequence if the
      *         element has no Namespace URI or if namespace processing is not
      *         being performed.

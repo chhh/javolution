@@ -17,10 +17,10 @@ Webhostinghub.com/support/edu</a>.</i></p>
 <ul>
     <li> Real-time characteristics with no adverse effect on memory footprint or 
  garbage collection (e.g. it can be used for time critical communications).
- {@link javolution.xml.XMLFormat XMLFormat} is basically a "smart" 
+ {@link org.javolution.xml.XMLFormat XMLFormat} is basically a "smart"
  wrapper around our real-time StAX-like
- {@link javolution.xml.stream.XMLStreamReader XMLStreamReader} and 
- {@link javolution.xml.stream.XMLStreamWriter XMLStreamWriter}.</li>
+ {@link org.javolution.xml.stream.XMLStreamReader XMLStreamReader} and
+ {@link org.javolution.xml.stream.XMLStreamWriter XMLStreamWriter}.</li>
     <li> Works directly with your existing Java classes, no need to create new classes
  or customize your implementation in any way.</li>
     <li> The XML representation can be high level and impervious to obfuscation
@@ -35,7 +35,7 @@ Webhostinghub.com/support/edu</a>.</i></p>
 
 
 <p> The default XML format for a class is typically defined using 
-    the {@link javolution.xml.DefaultXMLFormat} annotation tag. 
+    the {@link org.javolution.xml.DefaultXMLFormat} annotation tag.
 {@code
 {@literal@}DefaultXMLFormat(Graphic.XML.class)     
 public abstract class Graphic implements XMLSerializable {
@@ -297,10 +297,10 @@ System.out.println(xml);
 
 <B>ALGORITHMS:</B>
 
-<p> Our {@link javolution.xml.XMLObjectReader XMLObjectReader}/{@link javolution.xml.XMLObjectWriter XMLObjectWriter} 
+<p> Our {@link org.javolution.xml.XMLObjectReader XMLObjectReader}/{@link org.javolution.xml.XMLObjectWriter XMLObjectWriter}
     are in fact simple wrappers around our <b>J</b>avolution high-performance StAX-like
-    {@link javolution.xml.stream.XMLStreamReader XMLStreamReader} and 
-    {@link javolution.xml.stream.XMLStreamWriter XMLStreamWriter} classes. 
+    {@link org.javolution.xml.stream.XMLStreamReader XMLStreamReader} and
+    {@link org.javolution.xml.stream.XMLStreamWriter XMLStreamWriter} classes.
     The logic of these wrappers is described below:</p>
 <pre>
 

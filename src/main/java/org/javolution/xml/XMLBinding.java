@@ -213,7 +213,7 @@ public class XMLBinding implements XMLSerializable {
                 throw new XMLStreamException(
                         "Class "
                                 + classQName.getLocalName()
-                                + " not found (see javolution.lang.Reflection to support additional class loader)");
+                                + " not found (see org.javolution.lang.Reflection to support additional class loader)");
             _aliasToClass.put(classQName, cls);
             return cls;
         } catch (ClassNotFoundException ex) {

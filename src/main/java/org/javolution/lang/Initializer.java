@@ -23,7 +23,7 @@ import org.javolution.context.LogContext;
  * 
  * <p> Javolution activator initialize {@link Realtime} classes when started.
  *     When running outside OSGi the method
- *     {@code javolution.osgi.internal.OSGiServices.initializeRealtimeClasses()}
+ *     {@code org.javolution.osgi.internal.OSGiServices.initializeRealtimeClasses()}
  *     can be used to that effect..</p> 
  * 
  * <p> Class loading can be performed in a lazy manner and therefore some parts 

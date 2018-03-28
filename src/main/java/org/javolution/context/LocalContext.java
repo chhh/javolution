@@ -19,7 +19,7 @@ import org.javolution.osgi.internal.OSGiServices;
  * and does not need to be specified for each operation.
  * 
  * ```java
- * import javolution.context.LocalContext.Parameter;
+ * import org.javolution.context.LocalContext.Parameter;
  * public class ModuloInteger extends Number {
  *     public static final Parameter<Integer> MODULO = new Parameter<Integer>() {
  *          protected Integer getDefault() { return -1; }

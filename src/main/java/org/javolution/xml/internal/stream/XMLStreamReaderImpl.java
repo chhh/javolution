@@ -265,9 +265,9 @@ public final class XMLStreamReaderImpl implements XMLStreamReader {
      * This method reads the prolog (if any).
      *
      * @param  reader the input source reader.
-     * @see    javolution.io.UTF8StreamReader
-     * @see    javolution.io.UTF8ByteBufferReader
-     * @see    javolution.io.CharSequenceReader
+     * @see    org.javolution.io.UTF8StreamReader
+     * @see    org.javolution.io.UTF8ByteBufferReader
+     * @see    org.javolution.io.CharSequenceReader
      */
     public void setInput(Reader reader) throws XMLStreamException {
         if (_reader != null)
