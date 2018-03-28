@@ -47,7 +47,7 @@ import org.javolution.util.internal.collection.UnmodifiableCollectionImpl;
 /**
  * High-performance collection with {@link Realtime strict timing constraints}.
  * 
- * This class implements most of the {@link java.util.stream.Stream} functions and can be used directly 
+ * This class implements most of the {@code java.util.stream.Stream} functions and can be used directly
  * to perform sequential or parallel aggregate operations.
  * 
  * Instance of this class may use custom element comparators instead of the default object equality 
