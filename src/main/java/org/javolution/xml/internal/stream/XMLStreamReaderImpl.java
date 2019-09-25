@@ -269,9 +269,9 @@ public final class XMLStreamReaderImpl implements XMLStreamReader {
      * This method reads the prolog (if any).
      *
      * @param  reader the input source reader.
-     * @see    javolution.io.UTF8StreamReader
-     * @see    javolution.io.UTF8ByteBufferReader
-     * @see    javolution.io.CharSequenceReader
+     * @see    org.javolution.io.UTF8StreamReader
+     * @see    org.javolution.io.UTF8ByteBufferReader
+     * @see    org.javolution.io.CharSequenceReader
      */
     public void setInput(Reader reader) throws XMLStreamException {
         if (_reader != null)
@@ -819,11 +819,6 @@ public final class XMLStreamReaderImpl implements XMLStreamReader {
 
     /**
      * Reloads data buffer.
-     * 
-     * @param detectEndOfStream indicates 
-     * @return <code>true</code> if the buffer has been reloaded;
-     *         <code>false</code> if the end of stream has being reached
-     *         and the event type (CHARACTERS or END_DOCUMENT) has been set.
      */
     private void reloadBuffer() throws XMLStreamException {
         if (_reader == null)
