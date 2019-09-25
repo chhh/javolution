@@ -13,6 +13,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
 
 import org.javolution.annotations.Realtime;
@@ -1452,31 +1456,45 @@ public final class XMLStreamReaderImpl implements XMLStreamReader {
             throw new XMLStreamException("Premature End-Of-File");
         if (byte0 == '<') { // UTF-8 or compatible encoding.
             _readBuffer[_startOffset++] = '<';
-            return "UTF-8";
+            return StandardCharsets.UTF_8.name();
         } else {
             int byte1;
+            int byte2 = Integer.MIN_VALUE;
             try {
                 byte1 = input.read();
             } catch (IOException e) {
                 throw new XMLStreamException(e);
             }
-            if (byte1 == -1)
+            if (byte1 == -1) {
                 throw new XMLStreamException("Premature End-Of-File");
-            if ((byte0 == 0) && (byte1 == '<')) { // UTF-16 BIG ENDIAN
-                _readBuffer[_startOffset++] = '<';
-                return "UTF-16BE";
-            } else if ((byte0 == '<') && (byte1 == 0)) { // UTF-16 LITTLE ENDIAN
-                _readBuffer[_startOffset++] = '<';
-                return "UTF-16LE";
-            } else if ((byte0 == 0xFF) && (byte1 == 0xFE)) { // BOM for UTF-16 LITTLE ENDIAN
-                return "UTF-16";
-            } else if ((byte0 == 0xFE) && (byte1 == 0xFF)) { // BOM for UTF-16 BIG ENDIAN
-                return "UTF-16";
-            } else { // Encoding unknown (or no prolog) assumes UTF-8
-                _readBuffer[_startOffset++] = (char) byte0;
-                _readBuffer[_startOffset++] = (char) byte1;
-                return "UTF-8";
             }
+            if ((byte0 == 0xFF) && (byte1 == 0xFE)) { // BOM for UTF-16 LITTLE ENDIAN
+                return StandardCharsets.UTF_16LE.name();
+            }
+            if ((byte0 == 0xFE) && (byte1 == 0xFF)) { // BOM for UTF-16 BIG ENDIAN
+                return StandardCharsets.UTF_16BE.name();
+            }
+
+            if (byte0 == BOM.UTF_8.bytes[0] && byte1 == BOM.UTF_8.bytes[1]) {
+                // looks like might be BOM for UTF-8
+                try {
+                    byte2 = input.read();
+                    if (byte2 == -1)
+                        throw new XMLStreamException("Premature End-Of-File");
+                    if (byte2 == BOM.UTF_8.bytes[2]) {
+                        return StandardCharsets.UTF_8.name();
+                    }
+                } catch (IOException e) {
+                    throw new XMLStreamException(e);
+                }
+            }
+            // Encoding unknown (or no prolog) assumes UTF-8
+            _readBuffer[_startOffset++] = (char) byte0;
+            _readBuffer[_startOffset++] = (char) byte1;
+            if (byte2 != Integer.MIN_VALUE) {
+                _readBuffer[_startOffset++] = (char) byte2;
+            }
+            return "UTF-8";
         }
     }
 
