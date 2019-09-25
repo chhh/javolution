@@ -19,6 +19,7 @@ import org.javolution.xml.internal.stream.XMLStreamReaderImpl;
 import org.javolution.xml.jaxb.test.schema.TestElement;
 import org.javolution.xml.jaxb.test.schema.TestRoot;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -43,17 +44,38 @@ public class XMLStreamReaderImplTest {
 	}
 
 	@Test
+	public void testReadXmlWithInputStreamAndBomUtf8() throws XMLStreamException{
+		_xmlStreamReaderImpl.setInput(this.getClass().getResourceAsStream("/test-small-with-bom-utf8.xml"));
+		readStream();
+		validate(1);
+	}
+
+	@Test
+	public void testReadXmlWithInputStreamAndBomUtf16LE() throws XMLStreamException{
+		_xmlStreamReaderImpl.setInput(this.getClass().getResourceAsStream("/test-small-with-bom-utf16le.xml"));
+		readStream();
+		validate(1);
+	}
+
+	@Test
+	public void testReadXmlWithInputStreamAndBomUtf16BE() throws XMLStreamException{
+		_xmlStreamReaderImpl.setInput(this.getClass().getResourceAsStream("/test-small-with-bom-utf16be.xml"));
+		readStream();
+		validate(1);
+	}
+
+	@Test
 	public void testReadXmlWithInputStreamAndLargeXML() throws XMLStreamException{
 		_xmlStreamReaderImpl.setInput(this.getClass().getResourceAsStream("/test-stax.xml"));
 		readStream();
-		validate();
+		validate(1000);
 	}
 	
 	@Test
 	public void testReadXmlWithReaderAndLargeXML() throws XMLStreamException{
 		_xmlStreamReaderImpl.setInput(new InputStreamReader(this.getClass().getResourceAsStream("/test-stax.xml")));
 		readStream();
-		validate();
+		validate(1000);
 	}
 	
 	private void readStream() throws XMLStreamException{
@@ -102,13 +124,13 @@ public class XMLStreamReaderImplTest {
 			}
 		}
 	}
-	
-	private void validate() {
+
+	private void validate(int elemCount) {
 		assertEquals("TestRoots Size == 1", 1, _testRoots.size());
 
 		final TestRoot testRoot = _testRoots.get(0);
 		final List<TestElement> elements = testRoot.getTestElement();
-		assertEquals("Elements Size == 1000", 1000, elements.size());
+		assertEquals("Elements Size == " + elemCount, elemCount, elements.size());
 		
 		for(int i = 0; i < elements.size(); i++) {
 			final TestElement element = elements.get(i);
