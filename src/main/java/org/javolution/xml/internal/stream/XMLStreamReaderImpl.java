@@ -14,9 +14,6 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
 import java.util.Map;
 
 import org.javolution.annotations.Realtime;
@@ -940,7 +937,7 @@ public final class XMLStreamReaderImpl implements XMLStreamReader {
     /**
      * Processes the attribute just read.
      */
-    private void processAttribute() throws XMLStreamException {
+    private void processAttribute() {
         if (_attrPrefixSep < 0) { // No prefix.
             if (isXMLNS(_attrQName)) { // Sets default namespace.
                 _namespaces.setPrefix(_namespaces._defaultNsPrefix, _attrValue);
@@ -978,7 +975,7 @@ public final class XMLStreamReaderImpl implements XMLStreamReader {
                     _location);
     }
 
-    private void processStartTag() throws XMLStreamException {
+    private void processStartTag() {
         if (++_depth >= _elemStack.length) {
             increaseStack();
         }
@@ -992,7 +989,6 @@ public final class XMLStreamReaderImpl implements XMLStreamReader {
         _attrPrefixSep = 0;
         _attrQName = null;
         _attrValue = null;
-        _attrQName = null;
         _charactersPending = false;
         _encoding = null;
         _entities.reset();
@@ -1183,7 +1179,7 @@ public final class XMLStreamReaderImpl implements XMLStreamReader {
     }
 
     // Implements XMLStreamReader Interface.
-    public void close() throws XMLStreamException {
+    public void close() {
         reset();
     }
 
@@ -1336,7 +1332,7 @@ public final class XMLStreamReaderImpl implements XMLStreamReader {
     }
 
     public int getTextCharacters(int sourceStart, char[] target,
-            int targetStart, int length) throws XMLStreamException {
+            int targetStart, int length) {
         CharArray text = getText();
         int copyLength = Math.min(length, text.length());
         System.arraycopy(text.array(), sourceStart + text.offset(), target,
@@ -1374,7 +1370,7 @@ public final class XMLStreamReaderImpl implements XMLStreamReader {
                 || (_eventType == XMLStreamConstants.END_ELEMENT);
     }
 
-    public boolean hasNext() throws XMLStreamException {
+    public boolean hasNext() {
         return _eventType != XMLStreamConstants.END_DOCUMENT;
     }
 
