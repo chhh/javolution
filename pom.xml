@@ -102,7 +102,17 @@
 				    <target>1.8</target>
 				</configuration>
 			</plugin>
-			
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>${exclude.tests}</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+
 			<!-- ============== -->
 			<!-- OSGi Packaging -->
 			<!-- ============== -->
@@ -175,6 +185,14 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<exclude.tests>nothing-to-exclude</exclude.tests>
 	</properties>
-
+	<profiles>
+		<profile>
+			<id>nojaxb</id>
+			<properties>
+				<exclude.tests>**/jaxb/*.java</exclude.tests>
+			</properties>
+		</profile>
+	</profiles>
 </project>
