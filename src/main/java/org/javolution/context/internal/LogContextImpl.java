@@ -17,7 +17,7 @@ import org.javolution.text.TextBuilder;
 public final class LogContextImpl extends LogContext {
 
     private static final LoggingThread LOGGING_THREAD = new LoggingThread();        
-    private Level actualLevel = DEFAULT_LEVEL.get(); 
+    private Level actualLevel = DEFAULT_LEVEL != null ? DEFAULT_LEVEL.get() : Level.INFO;
     private String actualPrefix = "";
     private String actualSuffix = "";
 
